@@ -5,7 +5,7 @@
     window.location.href="/" 
 </script>
 <% else %>
-<%= @requests %>
+
 <div class="row" style=" height: 100%;">
 		    <div class="col-md-2" style="background: #1e2126; padding: 0;">
 		      <h2 style="color: #4e555d; font-weight: lighter; text-align: center; padding-top: 30px;"><span style="color: #ab9cd7; font-size: 40px;">+ </span>Manage</h2>
@@ -31,22 +31,22 @@
 			      </tr>
 			     </thead>
 			     <tbody>
-			      <tr style="height: 40px; color: #4e525b;">
-			      	<td>Zhing Zhuang</td>
-			      	<td>VIP</td>
-			      	<td>3</td>
-			      	<td>New Booking</td>
+			     <% @requests.each do |r| %>
+			     	<tr style="height: 40px; color: #4e525b;">
+			      	<td><%= r.username %></td>
+			      	<td><%= r.bedtype %></td>
+			      	<td><%= r.quantity %></td>
+			      	<td>
+			      		<% if (r.checkedin) %>
+			      			<%= "Checkout" %>
+			      		<% else %>
+			      			<%= "Checkin" %>
+			      		<% end %>
+			      	</td>
 			      	<td><a href="#" class="app-button purple-only">Approve</a></td>
 			      	<td><a href="#" class="app-button" style="">Disapprove</a></td>
 			      </tr>
-			      <tr style="height: 40px; color: #4e525b;">
-			      	<td>Phing Shang</td>
-			      	<td>Silver</td>
-			      	<td>1</td>
-			      	<td>Checkout</td>
-			      	<td><a href="#" class="app-button purple-only" style="" >Approve</a></td>
-			      	<td><a href="#" class="app-button" style="" >Disapprove</a></td>
-			      </tr>
+			     <% end %>
 			     </tbody>
 		      </table>
 		    </div>
