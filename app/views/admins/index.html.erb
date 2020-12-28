@@ -1,10 +1,55 @@
-
+<!doctype hmtl>
 
 <% if(session[:username] != session[:username]) %>
 <script type="text/javascript">
     window.location.href="/" 
 </script>
 <% else %>
-This is admin index page.
-Not Empty
+<%= @requests %>
+<div class="row" style=" height: 100%;">
+		    <div class="col-md-2" style="background: #1e2126; padding: 0;">
+		      <h2 style="color: #4e555d; font-weight: lighter; text-align: center; padding-top: 30px;"><span style="color: #ab9cd7; font-size: 40px;">+ </span>Manage</h2>
+		      <a href="modify.html" class="purple-inside-black">Modify beds</a>
+		      <div href="#" class="heading-inside-black">NOTIFICATIONS</div>
+		      <a href="#" class="option-inside-black highlighted-1">Inbox (0)</a>
+		      <a href="previous.html" class="option-inside-black">History</a>
+		      <a href="#" class="app-button purple-only" style="margin-top: 100px;">Logout</a>
+		    </div>
+		    
+		    <div class="col-md" style="width: 99%; height: 100%; background: #ffffff; margin: 0px; padding: 0px; margin-left: 3px; overflow: auto;">
+		      <h2 style="color: #4e555d; font-weight: lighter; padding-top: 40px; padding-left: 40px;">Inbox</h2>
+		      <div class="hr" style="margin-top: 35px;"></div>
+		      <table style="width: 100%; text-align: center;" class="fixed_header">
+		      	<thead >
+			      <tr style="background: #f1f2f4; height: 40px; color: #4e555d;">
+			      	<th>User</th>
+			      	<th>Bed</th>
+			      	<th>Quantity</th>
+			      	<th>Type</th>
+			      	<th>Approve</th>
+			      	<th>Disapprove</th>
+			      </tr>
+			     </thead>
+			     <tbody>
+			      <tr style="height: 40px; color: #4e525b;">
+			      	<td>Zhing Zhuang</td>
+			      	<td>VIP</td>
+			      	<td>3</td>
+			      	<td>New Booking</td>
+			      	<td><a href="#" class="app-button purple-only">Approve</a></td>
+			      	<td><a href="#" class="app-button" style="">Disapprove</a></td>
+			      </tr>
+			      <tr style="height: 40px; color: #4e525b;">
+			      	<td>Phing Shang</td>
+			      	<td>Silver</td>
+			      	<td>1</td>
+			      	<td>Checkout</td>
+			      	<td><a href="#" class="app-button purple-only" style="" >Approve</a></td>
+			      	<td><a href="#" class="app-button" style="" >Disapprove</a></td>
+			      </tr>
+			     </tbody>
+		      </table>
+		    </div>
+		</div>
+
 <% end %>

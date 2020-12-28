@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_28_102546) do
+ActiveRecord::Schema.define(version: 2020_12_28_131927) do
 
   create_table "beds", force: :cascade do |t|
     t.string "bedtype"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_12_28_102546) do
     t.datetime "checkouttime"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "expired", default: false
   end
 
   create_table "users", force: :cascade do |t|
