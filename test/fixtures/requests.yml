@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  bedtype: MyString
+  quantity: 1
+  requestcompleted: false
+  checkedin: false
+  checkintime: 2020-12-28 15:53:23
+  checkedout: false
+  checkouttime: 2020-12-28 15:53:23
+
+two:
+  username: MyString
+  bedtype: MyString
+  quantity: 1
+  requestcompleted: false
+  checkedin: false
+  checkintime: 2020-12-28 15:53:23
+  checkedout: false
+  checkouttime: 2020-12-28 15:53:23
