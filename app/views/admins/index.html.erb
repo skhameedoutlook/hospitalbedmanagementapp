@@ -1,4 +1,4 @@
-<!doctype hmtl>
+
 
 <% if(session[:username] != session[:username]) %>
 <script type="text/javascript">
@@ -9,10 +9,10 @@
 <div class="row" style=" height: 100%;">
 		    <div class="col-md-2" style="background: #1e2126; padding: 0;">
 		      <h2 style="color: #4e555d; font-weight: lighter; text-align: center; padding-top: 30px;"><span style="color: #ab9cd7; font-size: 40px;">+ </span>Manage</h2>
-		      <a href="modify.html" class="purple-inside-black">Modify beds</a>
+		      <a href="/beds" class="purple-inside-black">Modify beds</a>
 		      <div href="#" class="heading-inside-black">NOTIFICATIONS</div>
-		      <a href="#" class="option-inside-black highlighted-1">Inbox (0)</a>
-		      <a href="previous.html" class="option-inside-black">History</a>
+		      <a href="#" class="option-inside-black highlighted-1">Inbox (<%= @requests.count %>)</a>
+<!-- 		      <a href="previous.html" class="option-inside-black">History</a> -->
 		      <a href="#" class="app-button purple-only" style="margin-top: 100px;">Logout</a>
 		    </div>
 		    

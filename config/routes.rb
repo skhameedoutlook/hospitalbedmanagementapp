@@ -3,5 +3,6 @@ Rails.application.routes.draw do
    resources :users
    resources :admins
    resources :mains
-   
+   resources :beds
+
 end
