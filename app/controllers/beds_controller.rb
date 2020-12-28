@@ -6,6 +6,7 @@ class BedsController < ApplicationController
 
 	def edit
 		@bed = Bed.find(params[:id])
+		@requests = Request.where(requestcompleted: false)
 	end
 
 	def update

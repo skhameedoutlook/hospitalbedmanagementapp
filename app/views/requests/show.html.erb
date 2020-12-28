@@ -10,20 +10,37 @@
     <div class="row" style=" height: 100%;">
         <div class="col-md-2" style="background: #1e2126; padding: 0;">
           <h2 style="color: #4e555d; font-weight: lighter; text-align: center; padding-top: 30px;"><span style="color: #ab9cd7; font-size: 40px;">+ </span>Manage</h2>
-          <a href="http://localhost:3000/beds" class="purple-inside-black">Modify beds</a>
+          <a href="http://localhost:3000/listbeds" class="purple-inside-black">Request beds</a>
           <div href="#" class="heading-inside-black">NOTIFICATIONS</div>
-          <a href="http://localhost:3000/admins" class="option-inside-black">Inbox (<%= @requests.count %>)</a>
+          <a href="http://localhost:3000/users" class="option-inside-black">Inbox (<%= @requests.count %>)</a>
           <a href="#" class="app-button purple-only" style="margin-top: 100px;">Logout</a>
         </div>
         
         <div class="col-md" style="width: 99%; height: 100%; background: #ffffff; margin: 0px; padding: 0px; margin-left: 3px; overflow: auto;">
           <h2 style="color: #4e555d; font-weight: lighter; padding-top: 40px; padding-left: 40px;">Enter quantity of beds</h2>
           <div class="hr" style="margin-top: 35px; backgorund: #0F0F0F"></div>
-          <%= form_with model: @bed, local: true do |form| %>
+          <%= form_with model: @request, local: true do |form| %>
+          <div>
+              <%= form.hidden_field  :username %><br>
+            </div>
             <div>
               <%= form.hidden_field  :bedtype %><br>
             </div>
-
+            <div>
+              <%= form.hidden_field  :requestcompleted %><br>
+            </div>
+            <div>
+              <%= form.hidden_field  :checkedin %><br>
+            </div>
+            <div>
+              <%= form.hidden_field  :checkintime %><br>
+            </div>
+            <div>
+              <%= form.hidden_field  :checkedout %><br>
+            </div>
+            <div>
+              <%= form.hidden_field  :checkouttime %><br>
+            </div>
             <div>
               <%= form.label :quantity %><br>
               <%= form.text_field :quantity %><br>

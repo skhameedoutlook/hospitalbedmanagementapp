@@ -1,15 +1,15 @@
 
 <div class="row" style=" height: 100%;">
     <div class="col-md-2" style="background: #1e2126; padding: 0;">
-      <h2 style="color: #4e555d; font-weight: lighter; text-align: center; padding-top: 30px;"><span style="color: #ab9cd7; font-size: 40px;">+ </span>Manage</h2>
-      <a href="#" class="purple-inside-black">Modify beds</a>
+      <h2 style="color: #4e555d; font-weight: lighter; text-align: center; padding-top: 30px;"><span style="color: #ab9cd7; font-size: 40px;">+ </span>user</h2>
+      <a href="http://localhost:3000/users/listbeds" class="purple-inside-black">Request beds</a>
       <div href="#" class="heading-inside-black">NOTIFICATIONS</div>
-      <a href="http://localhost:3000/admins" class="option-inside-black">Inbox (<%= @requests.count %>)</a>
+      <a href="/users" class="option-inside-black">Inbox (<%= @requests.count %>)</a>
       <a href="#" class="app-button purple-only" style="margin-top: 100px;">Logout</a>
     </div>
     
     <div class="col-md" style="width: 99%; height: 100%; background: #ffffff; margin: 0px; padding: 0px; margin-left: 3px; overflow: auto;">
-      <h2 style="color: #4e555d; font-weight: lighter; padding-top: 40px; padding-left: 40px;">Bed Management</h2>
+      <h2 style="color: #4e555d; font-weight: lighter; padding-top: 40px; padding-left: 40px;">Click request on the bed you want</h2>
       <div class="hr" style="margin-top: 35px;"></div>
       <table style="width: 100%; text-align: center;" class="fixed_header">
       	<thead >
@@ -24,8 +24,7 @@
 	     	<tr style="height: 40px; color: #4e525b;">
 	      	<td><%= b.bedtype %></td>
 	      	<td><%= b.quantity %></td>
-	      	<td><%= link_to "Modify", edit_bed_path(b) %></td>
-	      	
+	      	<td><a href="http://localhost:3000/requests/<%= b.id %>" class="app-button purple-only">Request</a></td>
 	      </tr>
 	     <% end %>
 	      
