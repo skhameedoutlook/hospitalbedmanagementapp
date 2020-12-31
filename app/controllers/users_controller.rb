@@ -18,4 +18,10 @@ class UsersController < ApplicationController
 		@request.save
 		redirect_to :controller => 'users', :action => 'previous'
 	end
+
+	def bill
+		@request = Request.where(id: params[:id])[0]
+		@cost = Bed.where(bedtype: @request.bedtype)[0].cost
+		@totaltime = 1
+	end
 end

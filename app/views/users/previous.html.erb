@@ -47,7 +47,7 @@
 			      	</td>
 			      	<td>
 			      		<% if (r.checkedout) %>
-			      			<a href="#" class="app-button">Bill</a>
+			      			<a href="http://localhost:3000/users/bill/<%= r.id %>" class="app-button">Bill</a>
 			      		<% else %>
 			      			<a href="http://localhost:3000/users/checkout/<%= r.id %>" class="app-button purple-only">Checkout</a>
 			      		<% end %>

@@ -17,7 +17,8 @@
 	      <tr style="background: #f1f2f4; height: 40px; color: #4e555d;">
 	      	<th>Bed</th>
 	      	<th>Quantity</th>
-	      	<th>Modify</th>
+	      	<th>Cost</th>
+	      	<th>Request</th>
 	      </tr>
 	     </thead>
 	     <tbody>
@@ -25,6 +26,7 @@
 	     	<tr style="height: 40px; color: #4e525b;">
 	      	<td><%= b.bedtype %></td>
 	      	<td><%= b.quantity %></td>
+	      	<td><%= b.cost %></td>
 	      	<td><a href="http://localhost:3000/requests/<%= b.id %>" class="app-button purple-only">Request</a></td>
 	      </tr>
 	     <% end %>

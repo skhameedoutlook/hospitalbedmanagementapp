@@ -5,14 +5,16 @@ Rails.application.routes.draw do
    		get :listbeds
          get 'previous', :to => 'users#previous'
          get 'checkout/:id', :to => 'users#checkout'
+         get 'bill/:id', :to =>'users#bill'
    	end
    end	
    resources :admins do
       collection do
-         get 'approvecheckin/:id', :to => 'admins#approvecheckin'
-         get 'approvecheckout/:id', :to => 'admins#approvecheckout'
+         get 'approvecheckin/:id/:qt', :to => 'admins#approvecheckin'
+         get 'approvecheckout/:id/:qt', :to => 'admins#approvecheckout'
          get 'disapprovecheckout/:id', :to => 'admins#disapprovecheckout'
          get 'disapprovecheckin/:id', :to => 'admins#disapprovecheckin'
+         get 'error', :to => 'admin#error'
       end
    end
    resources :mains
@@ -24,6 +26,6 @@ Rails.application.routes.draw do
    	end
    end
 
-
-
 end
+
+

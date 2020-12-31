@@ -47,9 +47,9 @@
 			      	</td>
 			      	<td>
 			      		<% if (r.checkedin) %>
-			      			<a href="http://localhost:3000/admins/approvecheckout/<%= r.id %>" class="app-button purple-only">Approve</a></td>
+			      			<a href="http://localhost:3000/admins/approvecheckout/<%= r.id %>/<%= r.quantity %>" class="app-button purple-only">Approve</a></td>
 			      		<% else %>
-			      			<a href="http://localhost:3000/admins/approvecheckin/<%= r.id %>" class="app-button purple-only">Approve</a></td>
+			      			<a href="http://localhost:3000/admins/approvecheckin/<%= r.id %>/<%= r.quantity %>" class="app-button purple-only">Approve</a></td>
 			      		<% end %>
 			      	</td>
 			      	<td>

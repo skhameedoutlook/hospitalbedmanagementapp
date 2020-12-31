@@ -16,12 +16,14 @@
 	      <tr style="background: #f1f2f4; height: 40px; color: #4e555d;">
 	      	<th>Bed</th>
 	      	<th>Quantity</th>
+	      	<th>Cost</th>
 	      	<th>Modify</th>
 	      </tr>
 	     </thead>
 	     <tbody>
 	     <% @beds.each do |b| %>
 	     	<tr style="height: 40px; color: #4e525b;">
+	     	<td><%= b.cost %></td>
 	      	<td><%= b.bedtype %></td>
 	      	<td><%= b.quantity %></td>
 	      	<td><a href="modifybed.html" class="app-button purple-only">Modify</a></td>

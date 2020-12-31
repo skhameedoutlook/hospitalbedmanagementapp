@@ -1,0 +1,17 @@
+<div class="container" style="text-align: center;">
+<h2 style="padding-top: 100px;">Order ID: # <%= @request.id %></h3>
+<hr>
+
+<address>
+<strong>Billed To:</strong><br>
+	<%= "hameed" %>
+</address>
+<address>
+<strong>Payment Details:</strong><br>
+Payment Method: Paid At Counter<br>
+From: <%= @request.checkintime %><br>
+To: <%= @request.checkouttime %><br>
+Amount: $<%= @totaltime*@cost*@request.quantity %>
+</address>
+    <button class="app-button purple-only" style="border: none;" onclick="window.print();return false;">Print</button>
+</div>

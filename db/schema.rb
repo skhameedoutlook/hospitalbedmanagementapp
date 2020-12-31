@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_28_131927) do
+ActiveRecord::Schema.define(version: 2020_12_31_084201) do
 
   create_table "beds", force: :cascade do |t|
     t.string "bedtype"
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "cost", default: 10.0
   end
 
   create_table "requests", force: :cascade do |t|

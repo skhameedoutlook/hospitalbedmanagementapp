@@ -17,7 +17,7 @@
         </div>
         
         <div class="col-md" style="width: 99%; height: 100%; background: #ffffff; margin: 0px; padding: 0px; margin-left: 3px; overflow: auto;">
-          <h2 style="color: #4e555d; font-weight: lighter; padding-top: 40px; padding-left: 40px;">Enter quantity of beds</h2>
+          <h2 style="color: #4e555d; font-weight: lighter; padding-top: 40px; padding-left: 40px;">Enter details of <%= @bed.bedtype %> beds</h2>
           <div class="hr" style="margin-top: 35px; backgorund: #0F0F0F"></div>
           <%= form_with model: @bed, local: true do |form| %>
             <div>
@@ -27,6 +27,11 @@
             <div>
               <%= form.label :quantity %><br>
               <%= form.text_field :quantity %><br>
+            </div>
+
+            <div>
+              <%= form.label :cost %><br>
+              <%= form.text_field :cost %><br>
             </div>
 
             <div>
