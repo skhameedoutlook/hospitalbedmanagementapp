@@ -22,6 +22,7 @@
 		      <table style="width: 100%; text-align: center;" class="fixed_header">
 		      	<thead >
 			      <tr style="background: #f1f2f4; height: 40px; color: #4e555d;">
+			      	<th>ID</th>
 			      	<th>User</th>
 			      	<th>Bed</th>
 			      	<th>Quantity</th>
@@ -33,6 +34,7 @@
 			     <tbody>
 			     <% @requests.each do |r| %>
 			     	<tr style="height: 40px; color: #4e525b;">
+			     	<td><%= r.id %></td>
 			      	<td><%= r.username %></td>
 			      	<td><%= r.bedtype %></td>
 			      	<td><%= r.quantity %></td>
@@ -43,8 +45,20 @@
 			      			<%= "Checkin" %>
 			      		<% end %>
 			      	</td>
-			      	<td><a href="#" class="app-button purple-only">Approve</a></td>
-			      	<td><a href="#" class="app-button" style="">Disapprove</a></td>
+			      	<td>
+			      		<% if (r.checkedin) %>
+			      			<a href="http://localhost:3000/admins/approvecheckout/<%= r.id %>" class="app-button purple-only">Approve</a></td>
+			      		<% else %>
+			      			<a href="http://localhost:3000/admins/approvecheckin/<%= r.id %>" class="app-button purple-only">Approve</a></td>
+			      		<% end %>
+			      	</td>
+			      	<td>
+			      		<% if (r.checkedin) %>
+			      			<a href="http://localhost:3000/admins/disapprovecheckout/<%= r.id %>" class="app-button">Disapprove</a></td>
+			      		<% else %>
+			      			<a href="http://localhost:3000/admins/disapprovecheckin/<%= r.id %>" class="app-button">Disapprove</a></td>
+			      		<% end %>
+			      	</td>
 			      </tr>
 			     <% end %>
 			     </tbody>
