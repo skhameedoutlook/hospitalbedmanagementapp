@@ -1,15 +1,15 @@
 class UsersController < ApplicationController
 	def index
-		@requests = Request.where(requestcompleted: false, username: "hameed")
+		@requests = Request.where(requestcompleted: false, username: session[:username])
 	end
 
 	def listbeds
-		@requests = Request.where(requestcompleted: false, username: "hameed")
+		@requests = Request.where(requestcompleted: false, username: session[:username])
 		@beds = Bed.all
 	end
 
 	def previous
-		@requests = Request.where(requestcompleted: true, username: "hameed")
+		@requests = Request.where(requestcompleted: true, username: session[:username])
 	end
 
 	def checkout

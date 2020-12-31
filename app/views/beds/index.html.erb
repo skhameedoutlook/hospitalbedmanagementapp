@@ -1,11 +1,17 @@
+<% if(session[:username] == nil or session[:usertype] != "admins") %>
+<script type="text/javascript">
+    window.location.href="/" 
+</script>
+<% else %>
+
 
 <div class="row" style=" height: 100%;">
     <div class="col-md-2" style="background: #1e2126; padding: 0;">
-      <h2 style="color: #4e555d; font-weight: lighter; text-align: center; padding-top: 30px;"><span style="color: #ab9cd7; font-size: 40px;">+ </span>Manage</h2>
+      <h2 style="color: #4e555d; font-weight: lighter; text-align: center; padding-top: 30px;"><span style="color: #ab9cd7; font-size: 40px;">+ </span><%= truncate(session[:username], :length => 6) %></h2>
       <a href="#" class="purple-inside-black">Modify beds</a>
       <div href="#" class="heading-inside-black">NOTIFICATIONS</div>
       <a href="http://localhost:3000/admins" class="option-inside-black">Inbox (<%= @requests.count %>)</a>
-      <a href="#" class="app-button purple-only" style="margin-top: 100px;">Logout</a>
+      <a href="http://localhost:3000/logout" class="app-button purple-only" style="margin-top: 100px;">Logout</a>
     </div>
     
     <div class="col-md" style="width: 99%; height: 100%; background: #ffffff; margin: 0px; padding: 0px; margin-left: 3px; overflow: auto;">
@@ -26,7 +32,7 @@
 	      	<td><%= b.bedtype %></td>
 	      	<td><%= b.quantity %></td>
 	      	<td><%= b.cost %></td>
-	      	<td><%= link_to "Modify", edit_bed_path(b) %></td>
+	      	<td><%= link_to "Modify", edit_bed_path(b), class: "btn btn-primary app-button purple-only on-hover-purple-only", style: "border: none;" %></td>
 	      	
 	      </tr>
 	     <% end %>
@@ -35,3 +41,5 @@
       </table>
     </div>
 </div>
+
+<% end %>

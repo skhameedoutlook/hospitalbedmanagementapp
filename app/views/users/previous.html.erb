@@ -1,20 +1,20 @@
-
-
-<% if(session[:username] != session[:username]) %>
+<% if(session[:username] == nil or session[:usertype] == "admins") %>
 <script type="text/javascript">
     window.location.href="/" 
 </script>
 <% else %>
 
+
+
 <div class="row" style=" height: 100%;">
 		    <div class="col-md-2" style="background: #1e2126; padding: 0;">
-		      <h2 style="color: #4e555d; font-weight: lighter; text-align: center; padding-top: 30px;"><span style="color: #ab9cd7; font-size: 40px;">+ </span>user</h2>
+		      <h2 style="color: #4e555d; font-weight: lighter; text-align: center; padding-top: 30px;"><span style="color: #ab9cd7; font-size: 40px;">+ </span><%= truncate(session[:username], :length => 6) %></h2>
 		      <a href="http://localhost:3000/users/listbeds" class="purple-inside-black">Request beds</a>
 		      <div href="#" class="heading-inside-black">NOTIFICATIONS</div>
 		      <a href="http://localhost:3000/users" class="option-inside-black">Inbox </a>
 		      <a href="#" class="option-inside-black highlighted-1">Previous (<%= @requests.count %>)</a>
 <!-- 		      <a href="previous.html" class="option-inside-black">History</a> -->
-		      <a href="#" class="app-button purple-only" style="margin-top: 100px;">Logout</a>
+		      <a href="http://localhost:3000/logout" class="app-button purple-only" style="margin-top: 100px;">Logout</a>
 		    </div>
 		    
 		    <div class="col-md" style="width: 99%; height: 100%; background: #ffffff; margin: 0px; padding: 0px; margin-left: 3px; overflow: auto;">

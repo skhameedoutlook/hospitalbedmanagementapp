@@ -1,1 +1,9 @@
+<% if(session[:username] == nil or session[:usertype] != "admins") %>
+<script type="text/javascript">
+    window.location.href="/" 
+</script>
+<% else %>
+
 Some error occured. Check if you have approved an invalid request.
+
+<% end %>

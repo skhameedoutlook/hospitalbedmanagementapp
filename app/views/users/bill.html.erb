@@ -1,10 +1,17 @@
+<% if(session[:username] == nil or session[:usertype] == "admins") %>
+<script type="text/javascript">
+    window.location.href="/" 
+</script>
+<% else %>
+
+
 <div class="container" style="text-align: center;">
 <h2 style="padding-top: 100px;">Order ID: # <%= @request.id %></h3>
 <hr>
 
 <address>
 <strong>Billed To:</strong><br>
-	<%= "hameed" %>
+	<%= @request.username %>
 </address>
 <address>
 <strong>Payment Details:</strong><br>
@@ -16,3 +23,5 @@ Amount: $<%= (@totaltime*@cost*@request.quantity).round(2) %>
 </address>
     <button class="app-button purple-only" style="border: none;" onclick="window.print();return false;">Print</button>
 </div>
+
+<% end %>
