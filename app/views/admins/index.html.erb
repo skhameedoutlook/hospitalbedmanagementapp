@@ -1,6 +1,6 @@
 
 
-<% if(session[:username] != session[:username]) %>
+<% if(session[:username] == nil or session[:usertype] != "admins") %>
 <script type="text/javascript">
     window.location.href="/" 
 </script>
@@ -13,7 +13,7 @@
 		      <div href="#" class="heading-inside-black">NOTIFICATIONS</div>
 		      <a href="#" class="option-inside-black highlighted-1">Inbox (<%= @requests.count %>)</a>
 <!-- 		      <a href="previous.html" class="option-inside-black">History</a> -->
-		      <a href="#" class="app-button purple-only" style="margin-top: 100px;">Logout</a>
+		      <a href="http://localhost:3000/logout" class="app-button purple-only" style="margin-top: 100px;">Logout</a>
 		    </div>
 		    
 		    <div class="col-md" style="width: 99%; height: 100%; background: #ffffff; margin: 0px; padding: 0px; margin-left: 3px; overflow: auto;">

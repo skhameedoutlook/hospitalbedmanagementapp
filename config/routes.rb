@@ -6,6 +6,9 @@ Rails.application.routes.draw do
          get 'previous', :to => 'users#previous'
          get 'checkout/:id', :to => 'users#checkout'
          get 'bill/:id', :to =>'users#bill'
+         get 'register', :to =>'users#register'
+         get 'login', :to => 'users#login'
+         post 'login', :to => 'users#validatelogin'
    	end
    end	
    resources :admins do
@@ -25,6 +28,15 @@ Rails.application.routes.draw do
    		get 'create/:val', to: 'resources#create'
    	end
    end
+
+   resources :mains do
+      collection do
+         
+      end
+   end
+
+   get '/', to: 'mains#index'
+   get '/logout', to: 'users#logout'
 
 end
 
