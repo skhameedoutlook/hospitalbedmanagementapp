@@ -22,6 +22,6 @@ class UsersController < ApplicationController
 	def bill
 		@request = Request.where(id: params[:id])[0]
 		@cost = Bed.where(bedtype: @request.bedtype)[0].cost
-		@totaltime = 1
+		@totaltime = (Time.parse(@request.checkouttime.to_s)-Time.parse(@request.checkintime.to_s))/(60*60)
 	end
 end

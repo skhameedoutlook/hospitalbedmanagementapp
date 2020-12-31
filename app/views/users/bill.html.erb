@@ -9,9 +9,10 @@
 <address>
 <strong>Payment Details:</strong><br>
 Payment Method: Paid At Counter<br>
-From: <%= @request.checkintime %><br>
-To: <%= @request.checkouttime %><br>
-Amount: $<%= @totaltime*@cost*@request.quantity %>
+From: <%= Time.parse(@request.checkintime.to_s) %><br>
+To: <%= Time.parse(@request.checkouttime.to_s) %><br>
+Duration: <%=  @totaltime.round(2) %> Hours<br> 
+Amount: $<%= (@totaltime*@cost*@request.quantity).round(2) %>
 </address>
     <button class="app-button purple-only" style="border: none;" onclick="window.print();return false;">Print</button>
 </div>
